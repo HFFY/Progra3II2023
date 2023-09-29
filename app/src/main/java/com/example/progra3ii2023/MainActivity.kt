@@ -35,6 +35,15 @@ class MainActivity : AppCompatActivity() {
         carrera = "Ing Sistemas"
     )
 
+
+    val estudiante4 = Estudiante(
+        nombres = "Hugo",
+        apellidoPaterno = "Flores",
+        apellidoMaterno = "Yañez",
+        edad = 20,
+        codigo = 30000,
+        carrera = "Ing Sistemas"
+    )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
