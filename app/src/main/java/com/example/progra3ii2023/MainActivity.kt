@@ -55,9 +55,6 @@ class MainActivity : AppCompatActivity() {
         println(estudiante2.obtenerEdadEnString())
         val hola = "Hola"
         hola.quieroElLArgoDelString()
-        println(resultado)
-        println(nombreCompleto(estudiante))
-        println(codigoParImpar(estudiante))
     }
 
     fun edadMasNombre(edadFun: Int, nombreFun: String): String {
