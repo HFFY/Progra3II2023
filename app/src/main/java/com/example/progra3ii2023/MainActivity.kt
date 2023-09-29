@@ -34,28 +34,18 @@ class MainActivity : AppCompatActivity() {
         codigo = 30000,
         carrera = "Ing Sistemas"
     )
-
-
-    val estudiante4 = Estudiante(
-        nombres = "Hugo",
-        apellidoPaterno = "Flores",
-        apellidoMaterno = "Yañez",
-        edad = 20,
-        codigo = 30000,
-        carrera = "Ing Sistemas"
-    )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val resultado = edadMasNombre(edadFun = edad, nombreFun = nombre)
-        println(resultado)
-        println(nombreCompleto(estudiante))
-        println(codigoParImpar(estudiante))
         val listanu = listaEstud()
         println("Los miembros son ${listanu[0].nombres}, ${listanu[1].nombres}, ${listanu[2].nombres}")
         println(estudiante2.obtenerEdadEnString())
         val hola = "Hola"
         hola.quieroElLArgoDelString()
+        println(resultado)
+        println(nombreCompleto(estudiante))
+        println(codigoParImpar(estudiante))
     }
 
     fun edadMasNombre(edadFun: Int, nombreFun: String): String {
@@ -137,14 +127,6 @@ class MainActivity : AppCompatActivity() {
     fun String.quieroElLArgoDelString(): Int{
         return length
     }
-
-
-
-
-
-
-
-
 
     fun factorial(numero: Int): String {
         return if (numero < 0)
