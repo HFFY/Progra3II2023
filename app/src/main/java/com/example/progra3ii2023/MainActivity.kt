@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity() {
         carrera = "Ing Sistemas"
     )
 
-
     val estudiante4 = Estudiante(
         nombres = "Hugo",
         apellidoPaterno = "Flores",
@@ -56,6 +55,9 @@ class MainActivity : AppCompatActivity() {
         println(estudiante2.obtenerEdadEnString())
         val hola = "Hola"
         hola.quieroElLArgoDelString()
+        println(resultado)
+        println(nombreCompleto(estudiante))
+        println(codigoParImpar(estudiante))
     }
 
     fun edadMasNombre(edadFun: Int, nombreFun: String): String {
@@ -138,13 +140,18 @@ class MainActivity : AppCompatActivity() {
         return length
     }
 
-
-
-
-
-
-
-
+    fun fibonacci2(cantidad: Int): String {
+        return if (cantidad <= 2)
+            "Ingrese una cantidad de digitos mayor a 2"
+        else {
+            val secuencia = mutableListOf<Long>(0, 1)
+            for (i in 2 until cantidad step 1) {
+                val fibonacciNumer = secuencia[i - 1] + secuencia[i - 2]
+                secuencia.add(fibonacciNumer)
+            }
+            return "La secuencia de fibonacci es: ${secuencia.joinToString(" - ")}"
+        }
+    }
 
     fun factorial(numero: Int): String {
         return if (numero < 0)
