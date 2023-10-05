@@ -2,6 +2,9 @@ package com.example.progra3ii2023
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import com.example.progra3ii2023.dataClases.Estudiante
 
 class MainActivity : AppCompatActivity() {
@@ -34,9 +37,21 @@ class MainActivity : AppCompatActivity() {
         codigo = 30000,
         carrera = "Ing Sistemas"
     )
+
+    lateinit var textView: TextView
+    lateinit var button: Button
+    lateinit var editText: EditText
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        textView = findViewById(R.id.text_view_hello_world)
+        button = findViewById(R.id.button_hola)
+        editText = findViewById(R.id.edit_text_numero)
+
+
+
         val resultado = edadMasNombre(edadFun = edad, nombreFun = nombre)
         val listanu = listaEstud()
         println("Los miembros son ${listanu[0].nombres}, ${listanu[1].nombres}, ${listanu[2].nombres}")
