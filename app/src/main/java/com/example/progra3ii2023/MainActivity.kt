@@ -51,6 +51,11 @@ class MainActivity : AppCompatActivity() {
         editText = findViewById(R.id.edit_text_numero)
 
 
+        button.setOnClickListener {
+            val texto: String = editText.text.toString()
+            textView.text = texto
+            editText.text.clear()
+        }
 
         val resultado = edadMasNombre(edadFun = edad, nombreFun = nombre)
         val listanu = listaEstud()

@@ -15,7 +15,7 @@
         android:paddingTop="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World! lorem impsum bla bla bla" />
+        android:text="Hello World!" />
 
     <Button
         android:id="@+id/button_hola"
@@ -28,9 +28,9 @@
         android:id="@+id/edit_text_numero"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="escribe tu numero"
-        android:maxLength="8"
-        android:inputType="number"
+        android:hint="escribe un texto"
+        android:maxLength="15"
+        android:inputType="text"
         android:maxLines="5"/>
 
 </LinearLayout>
