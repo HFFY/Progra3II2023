@@ -4,33 +4,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:gravity="top|right"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/text_view_hello_world"
-        android:textColor="@color/rojo"
-        android:layout_marginVertical="32dp"
-        android:paddingTop="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_marginVertical="32dp"
+        android:paddingTop="16dp"
+        android:text="@string/hola_mundo"
+        android:textColor="@color/rojo" />
 
     <Button
         android:id="@+id/button_hola"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Hola"/>
+        android:text="@string/buton" />
 
     <EditText
         android:id="@+id/edit_text_numero"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="escribe un texto"
-        android:maxLength="15"
         android:inputType="text"
-        android:maxLines="5"/>
+        android:maxLength="15"
+        android:maxLines="5" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="Hola!" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="Hola!" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="Hola!" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="Hola!" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="Hola!" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="Hola!" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="2"
+            android:background="@color/rojo"
+            android:text="Hola!" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="2"
+            android:text="Hola!" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@color/rojo"
+            android:text="Hola!" />
+
+    </LinearLayout>
 
 </LinearLayout>

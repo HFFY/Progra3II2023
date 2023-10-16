@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Progra3II2023</string>
+    <string name="hola_mundo">Hola Mundo Progra 3</string>
+    <string name="buton">Enviar Data</string>
 </resources>

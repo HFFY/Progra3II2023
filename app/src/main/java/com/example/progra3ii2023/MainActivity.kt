@@ -1,10 +1,15 @@
 package com.example.progra3ii2023
 
+import android.app.Activity
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.example.progra3ii2023.EjemploDeClasesActivity.Companion.CLAVE_OBJETO
+import com.example.progra3ii2023.EjemploDeClasesActivity.Companion.CLAVE_STRING
 import com.example.progra3ii2023.dataClases.Estudiante
 
 class MainActivity : AppCompatActivity() {
@@ -42,6 +47,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var button: Button
     lateinit var editText: EditText
 
+    val context: Context = this
+    val activity: Activity = this
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -52,9 +60,10 @@ class MainActivity : AppCompatActivity() {
 
 
         button.setOnClickListener {
-            val texto: String = editText.text.toString()
-            textView.text = texto
-            editText.text.clear()
+            val intent: Intent = Intent(context, EjemploDeClasesActivity::class.java)
+            intent.putExtra(CLAVE_STRING,"Hola a todos")
+            intent.putExtra(CLAVE_OBJETO, estudiante)
+            startActivity(intent)
         }
 
         val resultado = edadMasNombre(edadFun = edad, nombreFun = nombre)
