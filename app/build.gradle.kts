@@ -7,6 +7,10 @@ android {
     namespace = "com.example.progra3ii2023"
     compileSdk = 33
 
+    viewBinding{
+        enable = true
+    }
+
     defaultConfig {
         applicationId = "com.example.progra3ii2023"
         minSdk = 28

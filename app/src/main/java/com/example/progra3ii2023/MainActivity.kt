@@ -11,6 +11,7 @@ import android.widget.TextView
 import com.example.progra3ii2023.EjemploDeClasesActivity.Companion.CLAVE_OBJETO
 import com.example.progra3ii2023.EjemploDeClasesActivity.Companion.CLAVE_STRING
 import com.example.progra3ii2023.dataClases.Estudiante
+import com.example.progra3ii2023.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -50,6 +51,8 @@ class MainActivity : AppCompatActivity() {
     val context: Context = this
     val activity: Activity = this
 
+    lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -57,7 +60,6 @@ class MainActivity : AppCompatActivity() {
         textView = findViewById(R.id.text_view_hello_world)
         button = findViewById(R.id.button_hola)
         editText = findViewById(R.id.edit_text_numero)
-
 
         button.setOnClickListener {
             val intent: Intent = Intent(context, EjemploDeClasesActivity::class.java)
