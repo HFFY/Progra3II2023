@@ -3,8 +3,10 @@ package com.example.progra3ii2023
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -67,6 +69,8 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra(CLAVE_OBJETO, estudiante)
             startActivity(intent)
         }
+
+        textView.visibility =View.GONE
 
         val resultado = edadMasNombre(edadFun = edad, nombreFun = nombre)
         val listanu = listaEstud()
