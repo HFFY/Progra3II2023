@@ -187,4 +187,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun setRecyclerView(){
+    }
+
 }
