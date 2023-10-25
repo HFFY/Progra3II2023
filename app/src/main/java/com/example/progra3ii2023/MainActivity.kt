@@ -1,8 +1,19 @@
 package com.example.progra3ii2023
 
+import android.app.Activity
+import android.content.Context
+import android.content.Intent
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import com.example.progra3ii2023.EjemploDeClasesActivity.Companion.CLAVE_OBJETO
+import com.example.progra3ii2023.EjemploDeClasesActivity.Companion.CLAVE_STRING
 import com.example.progra3ii2023.dataClases.Estudiante
+import com.example.progra3ii2023.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,26 +46,41 @@ class MainActivity : AppCompatActivity() {
         carrera = "Ing Sistemas"
     )
 
-    val estudiante4 = Estudiante(
-        nombres = "Hugo",
-        apellidoPaterno = "Flores",
-        apellidoMaterno = "Yañez",
-        edad = 20,
-        codigo = 30000,
-        carrera = "Ing Sistemas"
-    )
+    lateinit var textView: TextView
+    lateinit var button: Button
+    lateinit var editText: EditText
+
+    val context: Context = this
+    val activity: Activity = this
+
+    lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        textView = findViewById(R.id.text_view_hello_world)
+        button = findViewById(R.id.button_hola)
+        editText = findViewById(R.id.edit_text_numero)
+
+        button.setOnClickListener {
+            val intent: Intent = Intent(context, EjemploDeClasesActivity::class.java)
+            intent.putExtra(CLAVE_STRING,"Hola a todos")
+            intent.putExtra(CLAVE_OBJETO, estudiante)
+            startActivity(intent)
+        }
+
+        textView.visibility =View.GONE
+
         val resultado = edadMasNombre(edadFun = edad, nombreFun = nombre)
-        println(resultado)
-        println(nombreCompleto(estudiante))
-        println(codigoParImpar(estudiante))
         val listanu = listaEstud()
         println("Los miembros son ${listanu[0].nombres}, ${listanu[1].nombres}, ${listanu[2].nombres}")
         println(estudiante2.obtenerEdadEnString())
         val hola = "Hola"
         hola.quieroElLArgoDelString()
+        println(resultado)
+        println(nombreCompleto(estudiante))
+        println(codigoParImpar(estudiante))
     }
 
     fun edadMasNombre(edadFun: Int, nombreFun: String): String {
@@ -137,19 +163,6 @@ class MainActivity : AppCompatActivity() {
         return length
     }
 
-    fun fibonacci2(cantidad: Int): String {
-        return if (cantidad <= 2)
-            "Ingrese una cantidad de digitos mayor a 2"
-        else {
-            val secuencia = mutableListOf<Long>(0, 1)
-            for (i in 2 until cantidad step 1) {
-                val fibonacciNumer = secuencia[i - 1] + secuencia[i - 2]
-                secuencia.add(fibonacciNumer)
-            }
-            return "La secuencia de fibonacci es: ${secuencia.joinToString(" - ")}"
-        }
-    }
-
     fun factorial(numero: Int): String {
         return if (numero < 0)
             "Los factoriales solo se definen sobre el conjunto de números naturales"
@@ -172,6 +185,9 @@ class MainActivity : AppCompatActivity() {
             }
             return "La secuencia de fibonacci es: ${secuencia.joinToString(" - ")}"
         }
+    }
+
+    fun setRecyclerView(){
     }
 
 }
