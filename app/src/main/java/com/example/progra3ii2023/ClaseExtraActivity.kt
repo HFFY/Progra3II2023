@@ -27,6 +27,10 @@ class ClaseExtraActivity : AppCompatActivity() {
     }
 
     fun initSpinner(){
+        /*
+        * Los spinners nos dejan seleccionar una opcion de entre una lista de datos,
+        * podemos usarlo para cuando necesitamos tener solo un dato seleccionado entre muchos otros
+        * */
         val dataList = mutableListOf<String>()
         dataList.add("Spinner Test A")
         dataList.add("Spinner Test B")
@@ -56,6 +60,15 @@ class ClaseExtraActivity : AppCompatActivity() {
     }
 
     fun managePreferences(){
+        /*
+        * Shared preferences es una libreria que nos permite almacenar datos en clave valor que se persisten
+        * en la aplicacion. en el ejemplo de abajo tenemos como escribir datos en la app
+        * y como leerlos
+        *
+        * al igual que cuando pasamos datos entre activitys, para guardarlos debemos darles una clave en string,
+        * que podriamos guardar en Singletons en el proyecto para que podamos acceder a esos datos
+        * desde cualquier parte de la app
+        * */
         preference = PreferenceManager.getDefaultSharedPreferences(this)
         val ID_EJEMPLO = "nuestro_id"
         binding.buttonSave.setOnClickListener {
@@ -66,8 +79,15 @@ class ClaseExtraActivity : AppCompatActivity() {
 
         }
         binding.buttonShow.setOnClickListener {
+            // para obtener los datos podemos darle un valor predeterminado por si este dato no se encuentra almacenado
             val data = preference.getString(ID_EJEMPLO,"No hay nada")
             binding.textSavedData.text = "Dato guardado $data"
         }
+
+        /*para eliminar datos de shared preferences podemos hacer lo siguiente
+         val editor = preference.edit()
+         editor.remove(ID_EJEMPLO)
+         editor.apply()
+        * */
     }
 }
